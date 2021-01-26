@@ -19,8 +19,8 @@ public class BalancedBracketsTest {
     }
 
     @Test
-    public void emptyStringReturnsTrue(){
-        assertTrue(BalancedBrackets.hasBalancedBrackets(""));
+    public void emptyStringReturnsFalse(){
+        assertFalse(BalancedBrackets.hasBalancedBrackets(""));
     }
     @Test
     public void wordsInBracketReturnsTrue(){
@@ -51,5 +51,20 @@ public class BalancedBracketsTest {
     public void multipleBalenceBracketsReturnsTrue(){
         assertTrue(BalancedBrackets.hasBalancedBrackets("[][]"));
     }
+
+    @Test
+    public void reverseSecondSetBracketsReturnsFalse(){
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[]]["));
+    }
+    @Test
+    public void nestingBracketsReturnTrue(){
+        assertTrue(BalancedBrackets.hasBalancedBrackets("[[]]"));
+    }
+    @Test
+    public void nonEmptyStringWithoutBracketsReturnsFalse(){
+        assertFalse(BalancedBrackets.hasBalancedBrackets("launchcode"));
+
+    }
+
 
 }
